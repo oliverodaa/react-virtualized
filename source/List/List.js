@@ -151,6 +151,7 @@ export default class List extends React.PureComponent<Props> {
 
   /** CellMeasurer compatibility */
   recomputeGridSize({columnIndex = 0, rowIndex = 0}: CellPosition = {}, callback) {
+    callback();
     if (this.Grid) {
       this.Grid.recomputeGridSize({
         rowIndex,
@@ -161,6 +162,7 @@ export default class List extends React.PureComponent<Props> {
 
   /** See Grid#recomputeGridSize */
   recomputeRowHeights(index: number = 0, callback) {
+    callback();
     if (this.Grid) {
       this.Grid.recomputeGridSize({
         rowIndex: index,

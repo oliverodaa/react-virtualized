@@ -533,6 +533,7 @@ class Grid extends React.PureComponent<Props, State> {
    * Since Grid only receives :columnCount and :rowCount it has no way of detecting when the underlying data changes.
    */
   recomputeGridSize({columnIndex = 0, rowIndex = 0}: CellPosition = {}, callback) {
+    callback();
     const {scrollToColumn, scrollToRow} = this.props;
     const {instanceProps} = this.state;
 
