@@ -150,22 +150,22 @@ export default class List extends React.PureComponent<Props> {
   }
 
   /** CellMeasurer compatibility */
-  recomputeGridSize({columnIndex = 0, rowIndex = 0}: CellPosition = {}) {
+  recomputeGridSize({columnIndex = 0, rowIndex = 0}: CellPosition = {}, callback) {
     if (this.Grid) {
       this.Grid.recomputeGridSize({
         rowIndex,
         columnIndex,
-      });
+      }, callback);
     }
   }
 
   /** See Grid#recomputeGridSize */
-  recomputeRowHeights(index: number = 0) {
+  recomputeRowHeights(index: number = 0, callback) {
     if (this.Grid) {
       this.Grid.recomputeGridSize({
         rowIndex: index,
         columnIndex: 0,
-      });
+      }, callback);
     }
   }
 

@@ -532,7 +532,7 @@ class Grid extends React.PureComponent<Props, State> {
    * This function should be called if dynamic column or row sizes have changed but nothing else has.
    * Since Grid only receives :columnCount and :rowCount it has no way of detecting when the underlying data changes.
    */
-  recomputeGridSize({columnIndex = 0, rowIndex = 0}: CellPosition = {}) {
+  recomputeGridSize({columnIndex = 0, rowIndex = 0}: CellPosition = {}, callback) {
     const {scrollToColumn, scrollToRow} = this.props;
     const {instanceProps} = this.state;
 
@@ -558,7 +558,7 @@ class Grid extends React.PureComponent<Props, State> {
     this._styleCache = {};
     this._cellCache = {};
 
-    this.forceUpdate();
+    this.forceUpdate(callback);
   }
 
   /**
